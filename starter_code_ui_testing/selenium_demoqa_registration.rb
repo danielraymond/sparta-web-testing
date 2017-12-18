@@ -109,7 +109,7 @@ class SeleniumDemoReg
       select_hobby_option('dance')
     elsif rand_hobby == 1
       select_hobby_option('reading')
-    elsif rand_hobby == 2
+    else
       select_hobby_option('cricket')
     end
   end
@@ -158,26 +158,31 @@ class SeleniumDemoReg
   # Phone number field management - Difficulty Easy
 
   def set_phone_number_field(phone_number)
-    
+    @chrome_driver.find_element(:id, 'phone_9').send_keys(phone_number)
   end
 
   def get_phone_number_field_value
+    @chrome_driver.find_element(:id, 'phone_9')['value']
   end
 
   #  username field management - Difficulty Easy
 
   def set_user_name_field(user_name)
+    @chrome_driver.find_element(:id, 'username').send_keys(user_name)
   end
 
   def get_user_name_field_value
+    @chrome_driver.find_element(:id, 'username')['value']
   end
 
   # Email field management - Difficulty Easy
 
   def set_email_field(email)
+    @chrome_driver.find_element(:id, 'email_1').send_keys(email)
   end
 
   def get_email_field_value
+    @chrome_driver.find_element(:id, 'email_1')['value']
   end
 
   # about yourself / description field - Difficulty Easy
@@ -191,9 +196,11 @@ class SeleniumDemoReg
   # Password management - Difficulty Easy
 
   def set_password_field(password)
+    @chrome_driver.find_element(:id, 'password_2').send_keys(password)
   end
 
   def get_password_value
+    @chrome_driver.find_element(:id, 'password_2')['value']
   end
 
   def set_confirmation_password_field(password)

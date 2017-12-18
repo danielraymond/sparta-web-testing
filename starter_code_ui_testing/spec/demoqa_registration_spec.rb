@@ -40,7 +40,7 @@ describe 'testing the demoqa registration page' do
     end
 
     it 'accept a new DOB' do
-
+      pending("code")
     end
 
     it 'should accept a new country value' do
@@ -50,23 +50,31 @@ describe 'testing the demoqa registration page' do
     end
 
     it 'should accept a valid phone number' do
-
+      @driver.set_phone_number_field(7624163823)
+      expect(@driver.get_phone_number_field_value).to be_kind_of(String)
+      sleep 1
     end
 
     it 'should accept a username' do
-
+      @driver.set_user_name_field('draymond')
+      expect(@driver.get_user_name_field_value).to be_kind_of(String)
+      sleep 1
     end
 
     it 'should accept a about yourself text' do
-
+      @driver.set_email_field('email@email.com')
+      expect(@driver.get_email_field_value).to be_kind_of(String)
+      sleep 1
     end
 
     it 'should accept a password' do
-
+      @driver.set_password_field('password')
+      sleep 1
     end
 
     it 'should accept a password confirmation' do
-
+      expect(@driver.get_password_value).to be_kind_of(String)
+      sleep 1
     end
 
   end
