@@ -44,7 +44,9 @@ describe 'testing the demoqa registration page' do
     end
 
     it 'should accept a new country value' do
-
+      x = @driver.country_dropdown_list_select('Egypt')
+      expect(x).to be_kind_of(String)
+      sleep 1
     end
 
     it 'should accept a valid phone number' do

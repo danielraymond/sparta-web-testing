@@ -123,10 +123,17 @@ class SeleniumDemoReg
   def get_selected_country
     country_options = @chrome_driver.find_element(:id, 'dropdown_7')
     @chrome_driver.find_element(:tag_name, 'option')['value']
-
   end
 
   def country_dropdown_list_select(country)
+    country_options = @chrome_driver.find_element(:id, 'dropdown_7').click
+    options = @chrome_driver.find_elements(:tag_name, 'option')
+    options.each do |option|
+      if option.text == country
+        option.click
+        return option.text
+      end
+    end
   end
 
   # DOB management - Difficulty HARD
@@ -151,6 +158,7 @@ class SeleniumDemoReg
   # Phone number field management - Difficulty Easy
 
   def set_phone_number_field(phone_number)
+    
   end
 
   def get_phone_number_field_value
