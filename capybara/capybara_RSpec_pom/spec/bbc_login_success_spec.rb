@@ -7,7 +7,6 @@ describe 'Correct user details log in successfully' do
   end
 
   it "should log in successfully when the entered user details are correct" do
-    skip
     @bbc_site = BbcSite.new
     @bbc_site.bbc_homepage.visit_home_page
     @bbc_site.bbc_homepage.click_sign_in_link
