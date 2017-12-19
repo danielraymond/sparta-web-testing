@@ -2,10 +2,14 @@ require 'spec_helper'
 
 describe 'Incorrect user details produces valid error' do
 
+  after(:all) do
+    Capybara.current_session.driver.quit
+  end
+
   context 'it should respond with the correct error when incorrect details are input' do
 
     it 'should produce an error when inputting an incorrect password to a valid account' do
-      skip
+
       @bbc_site = BbcSite.new
       @bbc_site.bbc_homepage.visit_home_page
       @bbc_site.bbc_homepage.click_sign_in_link
@@ -16,7 +20,7 @@ describe 'Incorrect user details produces valid error' do
     end
 
     it "should produce an error when inputting an incorrect username" do
-      skip
+
       @bbc_site = BbcSite.new
       @bbc_site.bbc_homepage.visit_home_page
       @bbc_site.bbc_homepage.click_sign_in_link

@@ -11,4 +11,8 @@ class BbcSite
     BbcSignInPage.new
   end
 
+  def bbc_sign_up_page
+    BbcSignUpPage.new
+  end
+
 end
