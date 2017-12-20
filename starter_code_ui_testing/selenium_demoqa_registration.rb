@@ -48,7 +48,6 @@ class SeleniumDemoReg
 
   def first_name_field_displayed
     @chrome_driver.find_element(:id, FIRST_NAME_FIELD).displayed?
-    sleep 1
   end
 
   # last name field management - Difficulty Easy
@@ -63,7 +62,6 @@ class SeleniumDemoReg
 
   def last_name_field_displayed
     @chrome_driver.find_element(:id, LAST_NAME_FIELD).displayed?
-    sleep 1
   end
 
   # Marital option management - Difficulty Medium
